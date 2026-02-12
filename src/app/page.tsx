@@ -5,7 +5,7 @@ import { getCurrentUser } from '@/lib/auth'
 import { Typography } from '@/components/ui_shadcn/typography'
 import { Flex, Stack, Container } from '@/components/ui_shadcn/layout'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui_shadcn/avatar'
-import { GearTabs } from '@/components/gear-tabs'
+import { GearTabs } from '@/components/layout/profile/gear-tabs'
 
 export default async function Home() {
   const currentUser = await getCurrentUser()
@@ -28,7 +28,7 @@ export default async function Home() {
   ])
 
   return (
-    <Container className="p-8 min-h-[calc(100vh-4rem)] bg-(--neumo-base)">
+    <Container className="min-h-[calc(100vh-4rem)] bg-(--neumo-base) px-8 py-2">
       <Stack spacing={8}>
         {/* User Profile */}
         <Card variant="inset">
@@ -53,38 +53,6 @@ export default async function Home() {
             </Flex>
           </CardContent>
         </Card>
-
-        {/* Statistics */}
-        {/* <Grid gap={6} mdCols={2} lgCols={4}>
-            <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>総ギア数</CardDescription>
-              <CardTitle className="text-4xl">{allGears.length}</CardTitle>
-            </CardHeader>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>所有中</CardDescription>
-              <CardTitle className="text-4xl">{ownedGears.length}</CardTitle>
-            </CardHeader>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>カメラ</CardDescription>
-              <CardTitle className="text-4xl">{cameras.length}</CardTitle>
-            </CardHeader>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-2">
-              <CardDescription>レンズ</CardDescription>
-              <CardTitle className="text-4xl">{lenses.length}</CardTitle>
-            </CardHeader>
-          </Card>
-        </Grid> */}
-
         <GearTabs
           ownedGears={ownedGears}
           wantedGears={wantedGears}

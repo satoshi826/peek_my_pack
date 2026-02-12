@@ -135,6 +135,15 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.55 0 0 / 50%) transparent;
+  }
+  .dark html,
+  html.dark {
+    scrollbar-color: oklch(1 0 0 / 40%) transparent;
+  }
   body {
     @apply bg-background text-foreground;
   }
